@@ -141,6 +141,11 @@ module Cascading
     #     Java::OrgCascadingJson::JSONGenerator.new(*parameters)
     #   end
 
+    def field_joiner(field, delimiter)
+      field = fields(field)
+      Java::CascadingOperationText::FieldJoiner.new(field, delimiter)
+    end
+
     def date_parser(field, format)
       fields = fields(field)
       Java::CascadingOperationText::DateParser.new(fields, format)
