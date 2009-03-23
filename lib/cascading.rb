@@ -1,13 +1,17 @@
 # encoding: utf-8
  
 # cascading.rb : A DSL library for Cascading, in JRuby.
+#
+# Copyright 2009, Grégoire Marabout. All Rights Reserved.
+#
+# This is free software. Please see the LICENSE and COPYING files for details.
 
 require 'java'
 
 module Cascading
 
   # :stopdoc:
-  VERSION = '1.0.0'
+  VERSION = '0.0.2'
   LIBPATH = ::File.expand_path(::File.dirname(__FILE__)) + ::File::SEPARATOR
   PATH = ::File.dirname(LIBPATH) + ::File::SEPARATOR
   
