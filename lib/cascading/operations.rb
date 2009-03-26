@@ -11,6 +11,17 @@ module Cascading
       Java::CascadingOperation::Identity.new
     end
 
+    def line_join_function(fields, line_delimiter="\t", field_delimiter="|")
+      parameters = [Cascading.fields(fields), line_delimiter, field_delimiter]
+      Java::CascadingOperationAggregator::LineJoin.new(*parameters)
+    end
+
+    def session_split_function(fields)
+      parameters = [Cascading.fields(fields)]
+      Java::CascadingOperationAggregator::SplitSessionBuffer.
+        new(*parameters)
+    end
+
     def count_function(*args)
       options = args.extract_options!
       if args.empty?
